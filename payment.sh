@@ -2,7 +2,7 @@
 
 DATE=$(date +%F)
 LOGSDIR=/tmp
-# /home/centos/shellscript-logs/script-name-date.log
+# /tmp/shellscript-logs/script-name-date.log
 SCRIPT_NAME=$0
 LOGFILE=$LOGSDIR/$0-$DATE.log
 USERID=$(id -u)
@@ -51,7 +51,7 @@ pip3.6 install -r requirements.txt &>>$LOGFILE
 
 VALIDATE $? "Installing dependencies"
 
-cp /home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service &>>$LOGFILE
+cp /tmp/roboshop-shell/payment.service /etc/systemd/system/payment.service &>>$LOGFILE
 
 VALIDATE $? "copying payment service"
 

@@ -2,7 +2,7 @@
 
 DATE=$(date +%F)
 LOGSDIR=/tmp
-# /home/centos/shellscript-logs/script-name-date.log
+# /tmp/shellscript-logs/script-name-date.log
 SCRIPT_NAME=$0
 LOGFILE=$LOGSDIR/$0-$DATE.log
 USERID=$(id -u)
@@ -55,7 +55,7 @@ mv target/shipping-1.0.jar shipping.jar &>>$LOGFILE
 
 VALIDATE $? "renaming shipping jar"
 
-cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.service &>>$LOGFILE
+cp /tmp/roboshop-shell/shipping.service /etc/systemd/system/shipping.service &>>$LOGFILE
 
 VALIDATE $? "copying shipping service"
 

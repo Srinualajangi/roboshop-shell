@@ -2,7 +2,7 @@
 
 DATE=$(date +%F)
 LOGSDIR=/tmp
-# /home/centos/shellscript-logs/script-name-date.log
+# /tmp/shellscript-logs/script-name-date.log
 SCRIPT_NAME=$0
 LOGFILE=$LOGSDIR/$0-$DATE.log
 USERID=$(id -u)
@@ -60,7 +60,7 @@ npm install &>>$LOGFILE
 VALIDATE $? "Installing dependencies"
 
 # give full path of cart.service because we are inside /app
-cp /home/centos/roboshop-shell/cart.service /etc/systemd/system/cart.service &>>$LOGFILE
+cp /tmp/roboshop-shell/cart.service /etc/systemd/system/cart.service &>>$LOGFILE
 
 VALIDATE $? "copying cart.service"
 
